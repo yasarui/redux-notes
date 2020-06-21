@@ -48,7 +48,7 @@ function claimsReducer(currentListofClaims = [],action){
     }
 }
 
-function accountingReducer(currentAmount = 0,action){
+function accountingReducer(currentAmount = 100,action){
     switch(action.type){
         case "CREATE_CLAIM":
           return currentAmount - action.payload.amount;
@@ -73,6 +73,11 @@ const store = Redux.createStore(appCombinedReducers,composeEnhancers(Redux.apply
 store.dispatch(createPolicy('Alex', 20));
 store.dispatch(createPolicy('Jim', 30));
 store.dispatch(createPolicy('Bob', 40));
+
+store.dispatch(createClaim("Alex",120));
+store.dispatch(createClaim("Jim",50));
+
+store.dispatch(deletePloicy('Bob'))
 
 console.log("The Final State is ",store.getState())
 
