@@ -88,3 +88,7 @@ document.getElementById("get-random-user").addEventListener("click",function(eve
         payload:axios.get("https://randomuser.me/api/")
     })
 });
+
+
+//This example doesnt have a corresponding index8.html file.
+//This code is just a snippet of redux-promise-middleware
